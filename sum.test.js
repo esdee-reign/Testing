@@ -1,4 +1,5 @@
 const { expect } = require("@jest/globals");
+const { number } = require("yargs");
 const sum = require("./sum");
 
 test('adds 1 + 2 to equal 3', () => {
@@ -18,3 +19,36 @@ test('adding positive numbers is not a 0', () => {
         }
     }
 });
+
+//Numbers
+
+test('two plus two ', () => {
+    const sum = 2 + 2;
+    const floatNumber = 0.1 + 0.2;
+    expect(sum).toBeGreaterThan(3);
+    expect(sum).toBeLessThan(5);
+    expect(sum).toBe(4);
+    expect(sum).toEqual(4);
+    expect(floatNumber).toBeCloseTo(0.3);
+});
+
+//Strings
+
+test('if there is Z in Snehdeep', () => {
+    expect('Snehdeep').not.toMatch(/Z/);
+    expect('Snehdeep').toMatch(/deep/);
+})
+
+//Arrays and iterables
+
+const numbers = [
+    'one',
+    'two',
+    'three'
+]
+
+test('numbers contains two', () => {
+    expect(numbers).toContain('two');
+});
+
+//Exceptions
